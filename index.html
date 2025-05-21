@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Аудиосказки</title>
 </head>
 
@@ -19,12 +20,12 @@
         <div class="wrapper">
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/logo.svg" alt="Логотип">
+                    <img src="assets/img/logo.svg" alt="Логотип">
                 </a>
             </div>
-            <nav>
+            <nav class="menu">
                 <ul>
-                    <li><a href="index.html">Меню</a></li>
+                    <li><a href="index.html"><img src="./assets/img/svg/list.svg" alt="menu">Меню</a></li>
                     <li><a href="about.html"><img src="./assets/img/svg/Star.svg" alt="star"> Избранное</a></li>
                     <li><a href="contacts.html"><img src="./assets/img/svg/HeartStraight.svg" alt="heart">Ваши
                             пожелания</a></li>
@@ -32,11 +33,9 @@
                 </ul>
             </nav>
             <div class="search">
-                <form action="">
-                    <input type="text" placeholder="Поиск по сайту..." required><img
-                        src="./assets/img/svg/MagnifyingGlass.svg" alt="search">
+                <input type="text" placeholder="Поиск по сайту..." required class="search__input"><img
+                    src="./assets/img/svg/MagnifyingGlass.svg" alt="search" class="search__icon">
 
-                </form>
             </div>
             <div class="thema">
                 <div class="thema__dark">
@@ -45,6 +44,7 @@
                 <div class="thema__light">
                     <img src="./assets/img/svg/MoonStars.svg" alt="sun">
                 </div>
+                <div class="thema__circle"></div>
             </div>
 
     </header>
