@@ -110,18 +110,196 @@
                 <div class="main__description">
                     <h1>Аудиосказки для детей <span>(22)</span></h1>
                     <p>Дорогие посетители сайта! Милости просим на наш волшебный огонёк, не угасающий ни денно,
-                        ни нощно!
-                        С радостью сообщаем: аудиосказки «Фригато» с готовностью распахивают вам свои объятия! То,
+                        ни нощно! С радостью сообщаем: аудиосказки «Фригато» с готовностью распахивают вам свои объятия!
+                        То,
                         что вы не прошли мимо, просто замечательно! И мы очень надеемся и рассчитываем: зайдя
-                        на мгновение,
-                        вы останетесь с нами навсегда!</p>
+                        на мгновение, вы останетесь с нами навсегда!</p>
                 </div>
                 <div class="main__popular">
                     <h3>Популярные разделы</h3>
+                    <div class="popular__group">
+                        <button class="active">Русские народные</button>
+                        <button>Российские авторы</button>
+                        <button>Зарубежные авторы</button>
+                        <button>Подборки</button>
+                        <button>Ваши пожелания</button>
+                    </div>
+                </div>
+                <div class="main__sort">
+                    <h3>Сортировать по:</h3>
+                    <div class="sort__group">
+                        <button class="sort__btn active">Посещаемости</button>
+                        <button class="sort__btn">Популярности</button>
+                        <button class="sort__btn">Продолжительности</button>
+                        <button class="sort__btn">Дате</button>
+                        <button class="sort__btn">Алфавиту</button>
 
+                        <select id="readTime" name="read time" class="sort__select">
+                            <option value="" disabled selected hidden>Время чтения</option>
+                            <option value="ten">10 минут</option>
+                            <option value="twenty">20 минут</option>
+                            <option value="thirty">30 минут</option>
+                            <option value="forty">40 минут</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Поиск по сайту..." required class="search__input">
+                    <img src="./assets/img/svg/MagnifyingGlass.svg" alt="search" class="search__icon">
+                </div>
+                <div class="book__area">
+                    <div class="book__item">
+                        <div class="book__img">
+                            <img src="./assets/img/prewie.png" alt="book">
+                        </div>
+                        <div class="book__description">
+                            <div class="description__header">
+
+                                <div class="book__time">
+                                    <h3>Лунтик и его друзья</h3>
+                                    <img src="./assets/img/svg/Clock.svg" alt="clock">
+                                    <span>00:00:37</span>
+                                </div>
+                                <div class="book__reaction">
+                                    <div class="book__views">
+                                        <img src="./assets/img/svg/Eye.svg" alt="eye">
+                                        <span>1281706</span>
+                                    </div>
+                                    <div class="book__like">
+                                        <img src="./assets/img/svg/ThumbsUp.svg" alt="like">
+                                        <span>8135</span>
+                                    </div>
+                                    <div class="book__dislike">
+                                        <img src="./assets/img/svg/ThumbsDown.svg" alt="dislike">
+                                        <span>2735</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tags">
+                                <span>Разное</span>
+                                <span>Короткие</span>
+                                <span>Современные</span>
+                                <span>Для детей 3–4 лет</span>
+                                <span>Для детей 5–6 лет</span>
+                            </div>
+                            <div class="book__btn">
+                                <span>Перейти</span>
+                                <img src="./assets/img/svg/ArrowRight.svg" alt="to go in the card">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <aside></aside>
+            <aside>
+                <div class="authors">
+                    <h2>Авторы</h2>
+                    <div class="accordion__vertical">
+                        <div class="accordion__item">
+                            <div class="accordion__header">
+                                Народные
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="accordion-arrow">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <ul class="accordion-content">
+                                <li>Русские народные <span>155</span></li>
+                                <li>Русские Былины <span>11</span></li>
+                                <li>Восточные <span>16</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="accordion__item">
+                            <div class="accordion__header">
+                                Российские авторы
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="accordion-arrow">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <ul class="accordion-content">
+                                <li>Пушкин <span>15</span></li>
+                                <li>Маршак <span>5</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="accordion__item">
+                            <div class="accordion__header">
+                                Зарубежные авторы
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="accordion-arrow">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <ul class="accordion-content">
+                                <li>Андерсен <span>12</span></li>
+                                <li>Братья Гримм <span>18</span></li>
+                                <li>Шарль Перро <span>8</span></li>
+                                <li>Вильгейм Гауф <span>5</span></li>
+                            </ul>
+                        </div>
+                        <div class="accordion__item">
+                            <div class="accordion__header">
+                                Подборки
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="accordion-arrow">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </div>
+                            <ul class="accordion-content">
+                                <li>Разные авторы <span>381</span></li>
+                                <li>Для малышей <span>12</span></li>
+                                <li>Сказки в стихах <span>8</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="autorstop">
+                    <h2>Топ 10</h2>
+                    <div class="autostop__list">
+                        <div class="utostop__item">
+                            Лунтик и его друзья
+                        </div>
+                        <div class="utostop__item">
+                            Сказка о царе Салтане
+                        </div>
+                        <div class="utostop__item">
+                            Три поросенка
+                        </div>
+                        <div class="utostop__item">
+                            Колобок
+                        </div>
+                        <div class="utostop__item">
+                            Волшебник изумрудного города
+                        </div>
+                        <div class="utostop__item">
+                            Цветик-семицветик
+                        </div>
+                        <div class="utostop__item">
+                            Сказка о мёртвой царевне
+                            и о семи богатырях
+                        </div>
+                        <div class="utostop__item">
+                            Снежная королева
+                        </div>
+                        <div class="utostop__item">
+                            Конек-Горбунок
+                            (читает Табаков Олег)
+                        </div>
+                        <div class="utostop__item">
+                            Сказка о царе Салтане
+                        </div>
+                    </div>
+                </div>
+            </aside>
     </main>
     <footer>
         <div class="wrapper">

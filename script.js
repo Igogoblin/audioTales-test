@@ -23,3 +23,21 @@ document.addEventListener("click", (e) => {
     menu.classList.remove("active");
   }
 });
+// accordion --------------------------------------------------------
+const items = document.querySelectorAll(".accordion__item");
+
+items.forEach((item) => {
+  const header = item.querySelector(".accordion__header");
+  header.addEventListener("click", () => {
+    // Проверяем, активен ли уже этот элемент
+    const isActive = item.classList.contains("active");
+
+    // Закрываем все элементы
+    items.forEach((i) => i.classList.remove("active"));
+
+    // Если элемент не был активен, открываем его
+    if (!isActive) {
+      item.classList.add("active");
+    }
+  });
+});
