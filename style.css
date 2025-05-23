@@ -168,12 +168,11 @@ header .wrapper {
   display: none;
 }
 
-.menu__btn:hover {
+.menu__btn:hover,
+.menu__bar li:hover {
   color: var(--main-color);
 }
-.menu__bar li:hover {
-  transition: color 0.3s ease;
-}
+
 .search {
   width: 303px;
   height: 41px;
@@ -337,7 +336,7 @@ header .wrapper {
   .icon-link span,
   .heart-link span,
   .user-link span,
-  .search {
+  .search.menu__search {
     display: inline-block;
   }
   .burger__menu {
