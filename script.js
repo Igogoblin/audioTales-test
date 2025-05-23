@@ -23,19 +23,38 @@ document.addEventListener("click", (e) => {
     menu.classList.remove("active");
   }
 });
+const menuMobile = document.querySelector(".menu__burger");
+const menuDesktop = document.querySelector(".menu");
+const burger = document.querySelector(".burger__menu");
+
+burger.addEventListener("click", (e) => {
+  menuMobile.classList.add("active");
+  e.stopPropagation();
+});
+document.addEventListener("click", (e) => {
+  const isClickInside = menuMobile.contains(e.target);
+  if (!isClickInside && !burger.contains(e.target)) {
+    menuMobile.classList.remove("active");
+  }
+  if (
+    e.target.tagName === "A" ||
+    e.target.tagName === "LI" ||
+    e.target.tagName === "SPAN"
+  ) {
+    menuMobile.classList.remove("active");
+  }
+});
+
 // accordion --------------------------------------------------------
 const items = document.querySelectorAll(".accordion__item");
 
 items.forEach((item) => {
   const header = item.querySelector(".accordion__header");
   header.addEventListener("click", () => {
-    // Проверяем, активен ли уже этот элемент
     const isActive = item.classList.contains("active");
 
-    // Закрываем все элементы
     items.forEach((i) => i.classList.remove("active"));
 
-    // Если элемент не был активен, открываем его
     if (!isActive) {
       item.classList.add("active");
     }

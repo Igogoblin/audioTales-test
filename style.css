@@ -146,50 +146,33 @@ header .wrapper {
   align-items: center;
   gap: 5px;
 }
-.menu__btn:hover {
-  color: var(--main-color);
-}
-.list__hover {
-  display: none;
-}
-.menu__btn:hover .list__hover {
-  display: block;
-}
-.menu__btn:hover .list__default {
-  display: none;
-}
-.icon-hover {
-  display: none;
-}
 
-.icon-link:hover .icon-default {
-  display: none;
-}
-
-.icon-link:hover .icon-hover {
-  display: inline;
-}
-.heart-hover {
-  display: none;
-}
-.heart-link:hover .heart-default {
-  display: none;
-}
-
-.heart-link:hover .heart-hover {
-  display: inline;
-}
+.list__hover,
+.icon-hover,
+.heart-hover,
 .user-hover {
   display: none;
 }
+
+.menu__btn:hover .list__hover,
+.icon-link:hover .icon-hover,
+.heart-link:hover .heart-hover,
+.user-link:hover .user-hover {
+  display: block;
+}
+
+.menu__btn:hover .list__default,
+.icon-link:hover .icon-default,
+.heart-link:hover .heart-default,
 .user-link:hover .user-default {
   display: none;
 }
-.menu__bar li:hover {
-  transition: color 0s ease;
+
+.menu__btn:hover {
+  color: var(--main-color);
 }
-.user-link:hover .user-hover {
-  display: inline;
+.menu__bar li:hover {
+  transition: color 0.3s ease;
 }
 .search {
   width: 303px;
@@ -207,6 +190,7 @@ header .wrapper {
   line-height: 114%;
   background-color: var(--color-gray);
   color: var(--text-color-gray);
+  z-index: 1;
 }
 
 .search__icon {
@@ -299,6 +283,26 @@ header .wrapper {
 .burger__menu {
   display: none;
 }
+.menu__burger {
+  display: none;
+}
+@media screen and (max-width: 1310px) {
+  .menu {
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .menu__item:nth-child(2) {
+    margin: 0;
+  }
+  .menu h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .menu ul {
+    font-size: 18px;
+    gap: 15px;
+  }
+}
 @media screen and (max-width: 1150px) {
   header .wrapper {
     justify-content: end;
@@ -321,15 +325,20 @@ header .wrapper {
 }
 @media screen and (max-width: 800px) {
   .menu__bar,
-  .search {
+  .search,
+  .burger__hover {
     display: none;
   }
   .burger__menu {
     display: block;
     cursor: pointer;
   }
-  .burger__hover {
-    display: none;
+
+  .icon-link span,
+  .heart-link span,
+  .user-link span,
+  .search {
+    display: inline-block;
   }
   .burger__menu {
     width: 40px;
@@ -347,35 +356,56 @@ header .wrapper {
   .burger__menu:hover .burger__default {
     display: none;
   }
-}
-@media screen and (max-width: 1310px) {
-  .menu {
-    gap: 20px;
-    justify-content: space-between;
-  }
-  .menu__item:nth-child(2) {
-    margin: 0;
-  }
-}
-@media screen and (max-width: 1310px) {
-  .menu {
-    gap: 20px;
-    justify-content: space-between;
-  }
-  .menu h2 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  .menu ul {
-    font-size: 18px;
-    gap: 15px;
-  }
-}
-@media screen and (max-width: 800px) {
+
   .menu {
     display: none;
   }
+  .menu__burger {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    top: -720px;
+    left: 0;
+    z-index: 100;
+    background-color: var(--body-dark-color);
+    display: flex;
+    gap: 30px;
+    transition: top 0.3s ease;
+    box-sizing: border-box;
+    padding: 30px 20px;
+  }
+  .menu__burger.active {
+    top: 0;
+    transition: top 0.3s ease;
+  }
+  .menu__burger-list {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .user-link a,
+  .heart-link a,
+  .icon-link a {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .user-link:hover,
+  .heart-link:hover,
+  .icon-link:hover {
+    color: var(--main-color);
+  }
 }
+@media screen and (max-width: 500px) {
+  .menu__burger {
+    padding: 30px 15px;
+  }
+}
+
 /* finish header ----------------------------------------------------------------------------------  */
 /* main ------------------------------------------------------------------------------------------- */
 main {
@@ -513,14 +543,16 @@ h1 span {
 }
 .book__img {
   width: 214px;
-  min-width: 214px; /* фиксируем ширину */
+  min-width: 214px;
   height: 100%;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 20px;
-  flex-shrink: 0; /* не даём сжиматься */
+  flex-shrink: 0;
+  position: relative;
+  z-index: 0;
 }
 
 .book__img img {
@@ -529,7 +561,35 @@ h1 span {
   object-fit: cover;
   border-radius: 10px;
 }
-
+.for__play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.book__img .play__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  cursor: pointer;
+}
+.book__img .pause__icon {
+  position: absolute;
+  top: 50%;
+  left: -98px;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  cursor: pointer;
+}
 .book__description {
   min-width: 0;
   width: 100%;
@@ -642,6 +702,11 @@ h1 span {
     flex-direction: column;
   }
 }
+@media screen and (max-width: 1000px) {
+  .book__reaction {
+    margin: 0;
+  }
+}
 @media (max-width: 800px) {
   main {
     padding: 30px 0;
@@ -663,7 +728,14 @@ h1 span {
   }
   .sort__select {
     margin: 20px 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    appearance: none; /* убирает стрелку в большинстве браузеров */
+    -webkit-appearance: none; /* для Safari */
+    -moz-appearance: none; /* для Firefox */
   }
+
   .book__img {
     width: 120px;
     min-width: 120px;
@@ -685,9 +757,7 @@ h1 span {
     font-size: 20px;
     margin-right: 15px;
   }
-  .book__views {
-    margin: 0 auto 0 15px;
-  }
+
   .tags {
     font-size: 13px;
   }
@@ -696,23 +766,6 @@ h1 span {
   }
 }
 @media screen and (max-width: 600px) {
-  .book__item {
-    /* flex-direction: column;
-    align-items: center; */
-  }
-
-  /* .book__img {
-    margin: 0 0 20px 0;
-    width: 214px;
-    height: auto;
-  } */
-  /* 
-  .book__description {
-    padding: 0 20px;
-    align-items: center;
-    text-align: center;
-  } */
-
   .book__reaction {
     margin: 32px 0 0 0;
     justify-content: center;
@@ -837,6 +890,7 @@ aside {
 .accordion-content li {
   padding: 0px 0 5px 20px;
   color: var(--text-color-gray);
+  cursor: pointer;
 }
 .accordion-content span {
   color: var(--text-color-white);

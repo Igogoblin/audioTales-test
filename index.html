@@ -59,11 +59,11 @@
 
                 <div class="thema__circle"></div>
             </div>
-            <div class="burger__menu">
+            <div class="burger__menu" id="burger">
                 <img src="./assets/img/svg/List.svg" alt="burger" class="burger__default">
                 <img src="./assets/img/svg/ListGold.svg" alt="burger" class="burger__hover">
             </div>
-            <div class="menu">
+            <div class="menu" id="menuDesktop">
                 <div class="menu__item">
                     <h2>Народные</h2>
                     <ul>
@@ -105,8 +105,6 @@
                         </li>
                         <li>Сказки в стихах
                         </li>
-                        <li>Сказки в стихах
-                        </li>
                         <li>Волшебные
                         </li>
                         <li>Бытовые</li>
@@ -118,6 +116,95 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="menu__burger" id="menuMobile">
+
+                <div class="search">
+                    <input type="text" placeholder="Поиск по сайту..." required class="search__input"><img
+                        src="./assets/img/svg/MagnifyingGlass.svg" alt="search" class="search__icon">
+                </div>
+                <div class="accordion__vertical">
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            Народные
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="accordion-arrow">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>Русские народные <span>155</span></li>
+                            <li>Русские Былины <span>11</span></li>
+                            <li>Восточные <span>16</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            Российские авторы
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="accordion-arrow">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>Пушкин <span>15</span></li>
+                            <li>Маршак <span>5</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            Зарубежные авторы
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="accordion-arrow">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>Андерсен <span>12</span></li>
+                            <li>Братья Гримм <span>18</span></li>
+                            <li>Шарль Перро <span>8</span></li>
+                            <li>Вильгейм Гауф <span>5</span></li>
+                        </ul>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header">
+                            Подборки
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="accordion-arrow">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </div>
+                        <ul class="accordion-content">
+                            <li>Разные авторы <span>381</span></li>
+                            <li>Для малышей <span>12</span></li>
+                            <li>Сказки в стихах <span>8</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="menu__burger-list">
+                    <li class="user-link"><a href="#">
+                            <img src="./assets/img/svg/User.svg" alt="user" class="user-default">
+                            <img src="./assets/img/svg/UserGold.svg" alt="user" class="user-hover">
+                            <span>Личный кабинет</span></a>
+                    </li>
+                    <li class="icon-link"><a href="#">
+                            <img src="./assets/img/svg/Star.svg" alt="star" class="icon-default">
+                            <img src="./assets/img/svg/StarGold.svg" alt="star" class="icon-hover">
+                            <span>Избранное</span></a>
+                    </li>
+                    <li class="heart-link"><a href="#">
+                            <img src="./assets/img/svg/HeartStraight.svg" alt="heart" class="heart-default">
+                            <img src="./assets/img/svg/HeartStraightGold.svg" alt="heart" class="heart-hover">
+                            <span>Ваши пожелания</span></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
@@ -168,6 +255,10 @@
                     <div class="book__item">
                         <div class="book__img">
                             <img src="./assets/img/prewie.png" alt="book">
+                            <div class="for__play">
+                            </div>
+                            <img src="./assets/img/svg/Play.svg" alt="play" class="play__icon">
+                            <img src="./assets/img/svg/Pause.svg" alt="pause" class="pause__icon">
                         </div>
                         <div class="book__description">
                             <div class="description__header">
@@ -199,9 +290,7 @@
                                             <span>2735</span>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
                             <div class="tags">
                                 <span>Разное</span>
@@ -215,7 +304,55 @@
                                 <img src="./assets/img/svg/ArrowRight.svg" alt="to go in the card">
                             </div>
                         </div>
+                    </div>
+                    <div class="book__item">
+                        <div class="book__img">
+                            <img src="./assets/img/prewie.png" alt="book">
+                        </div>
+                        <div class="book__description">
+                            <div class="description__header">
 
+                                <div class="book__time">
+                                    <h3>Лунтик и его друзья</h3>
+                                    <div class="book__time-item">
+                                        <img src="./assets/img/svg/Clock.svg" alt="clock">
+                                        <span>00:00:37</span>
+                                        <div class="book__views-mobile">
+                                            <img src="./assets/img/svg/Eye.svg" alt="eye">
+                                            <span>1281706</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="book__reaction">
+                                    <div class="book__views">
+                                        <img src="./assets/img/svg/Eye.svg" alt="eye">
+                                        <span>1281706</span>
+                                    </div>
+                                    <div class="book__likegroup">
+                                        <div class="book__like">
+                                            <img src="./assets/img/svg/ThumbsUp.svg" alt="like">
+                                            <span>8135</span>
+                                        </div>
+                                        <div class="book__dislike">
+                                            <img src="./assets/img/svg/ThumbsDown.svg" alt="dislike">
+                                            <span>2735</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <span>Разное</span>
+                                <span>Короткие</span>
+                                <span>Современные</span>
+                                <span>Для детей 3–4 лет</span>
+                                <span>Для детей 5–6 лет</span>
+                            </div>
+                            <div class="book__btn">
+                                <span>Перейти</span>
+                                <img src="./assets/img/svg/ArrowRight.svg" alt="to go in the card">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
